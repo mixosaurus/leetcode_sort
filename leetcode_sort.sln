@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sort_Colors", "Sort_Colors\Sort_Colors.vcxproj", "{09470A32-1132-45A0-BB98-A3DB9231AA42}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Intersection_of_Two_Arrays", "Intersection_of_Two_Arrays\Intersection_of_Two_Arrays.vcxproj", "{8446FDAE-FE0E-4708-B441-2324202632BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{09470A32-1132-45A0-BB98-A3DB9231AA42}.Release|x64.Build.0 = Release|x64
 		{09470A32-1132-45A0-BB98-A3DB9231AA42}.Release|x86.ActiveCfg = Release|Win32
 		{09470A32-1132-45A0-BB98-A3DB9231AA42}.Release|x86.Build.0 = Release|Win32
+		{8446FDAE-FE0E-4708-B441-2324202632BA}.Debug|x64.ActiveCfg = Debug|x64
+		{8446FDAE-FE0E-4708-B441-2324202632BA}.Debug|x64.Build.0 = Debug|x64
+		{8446FDAE-FE0E-4708-B441-2324202632BA}.Debug|x86.ActiveCfg = Debug|Win32
+		{8446FDAE-FE0E-4708-B441-2324202632BA}.Debug|x86.Build.0 = Debug|Win32
+		{8446FDAE-FE0E-4708-B441-2324202632BA}.Release|x64.ActiveCfg = Release|x64
+		{8446FDAE-FE0E-4708-B441-2324202632BA}.Release|x64.Build.0 = Release|x64
+		{8446FDAE-FE0E-4708-B441-2324202632BA}.Release|x86.ActiveCfg = Release|Win32
+		{8446FDAE-FE0E-4708-B441-2324202632BA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
