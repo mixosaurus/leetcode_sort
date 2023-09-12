@@ -6,6 +6,8 @@ using namespace std;
 class Solution {
 public:
 	void sortColors(vector<int>& nums);
-	void quickSort(vector<int>& nums, int i, int j);
+	void quickSortTraditional(vector<int>& nums, int i, int j);
+	void quickSortApart(std::vector<int>& nums, int start, int end);
+	int partition(std::vector<int>& nums, int srart, int end);
 };
 

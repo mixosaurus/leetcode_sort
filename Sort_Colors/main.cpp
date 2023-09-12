@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 	Solution solution;
 	vector<int> nums = {
-		2,0,4,9,8,1
+		4,10, 2, 3, 7, 8, 9, 1, 5
 	};
 	solution.sortColors(nums);
 	for (int num : nums) {
