@@ -52,18 +52,18 @@ void Solution::quickSortApart(vector<int>& nums, int start, int end) {
 // 快慢指针
 int Solution::partition(vector<int>& nums, int srart, int end) {
 	int pivot = nums[end];
-	// follow跟随下面的i从左向右移动
+	// follow跟随i从左向右移动
 	int follow = srart - 1;
-	for (int index = srart; index < end; index++) {
-		if (nums[index] < pivot) {
+	for (int i = srart; i < end; i++) {
+		// 一旦follow停止跟随i，即说明follow的下一个元素大于等于pivot
+		if (nums[i] < pivot) {
+			// 让follow前进一步，使其指向上述大于等于pivot的元素
 			follow++;
-			cout << "i: " << follow << " index: " << index << endl;
-			std::swap(nums[follow], nums[index]);
-		} else {
-			cout << "i: " << follow << " index: " << index << endl;
+			// 此时follow指向大于等于pivot的元素，可与nums[i]交换
+			std::swap(nums[follow], nums[i]);
 		}
 	}
-	// nums[end]为povit
+	// nums[end]为povit，使其与大于等于pivot的元素交换
 	std::swap(nums[follow + 1], nums[end]);
 	return follow + 1;
 }
