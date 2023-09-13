@@ -8,6 +8,6 @@ public:
 	void sortColors(vector<int>& nums);
 	void quickSortTraditional(vector<int>& nums, int i, int j);
 	void quickSortApart(std::vector<int>& nums, int start, int end);
-	int partition(std::vector<int>& nums, int srart, int end);
+	int partitionWithTwoPointers(std::vector<int>& nums, int srart, int end);
 };
 
