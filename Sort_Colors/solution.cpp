@@ -3,7 +3,7 @@
 #include<algorithm>
 
 void Solution::sortColors(vector<int>& nums) {
-	quickSort(nums,0,nums.size()-1);
+	quickSortHoare(nums,0,nums.size()-1);
 }
 
 // 此部分代码在所有的快速排序皆相同，可搭配不同的划分算法
@@ -47,8 +47,9 @@ int Solution::partitionTraditional(vector<int>& nums, int start, int end) {
 	return i;
 }
 
-// 快速排序的划分操作，使用快慢指针
-int Solution::partitionWithTwoPointers(vector<int>& nums, int srart, int end) {
+// 快速排序的划分操作，使用快慢指针，单向遍历
+// Lomuto提出
+int Solution::partitionLomuto(vector<int>& nums, int srart, int end) {
 	int pivot = nums[end];
 	// follow跟随i从左向右移动
 	int follow = srart - 1;
@@ -64,4 +65,28 @@ int Solution::partitionWithTwoPointers(vector<int>& nums, int srart, int end) {
 	// nums[end]为povit，使其与大于等于pivot的元素交换
 	std::swap(nums[follow + 1], nums[end]);
 	return follow + 1;
+}
+
+// 使用Hoare划分，不保证在每轮划分结束后枢轴元素在其应该在的位置
+// 每轮划分结束后，数组会成为两个子序列，左侧子序列中的元素小于枢轴元素，右侧子序列中的元素大于等于枢轴元素，枢轴元素在右侧子序列的某个位置中
+void Solution::quickSortHoare(vector<int>& nums, int start, int end) {
+	if (start >= end)
+		return;
+	int pivot = nums[start];
+	int i = start - 1;
+	int j = end + 1;
+	while (true) {
+		do {
+			i++;
+		} while (nums[i] < pivot);
+		do {
+			j--;
+		} while (nums[j] > pivot);
+		if (i >= j) {
+			break;
+		}
+		swap(nums[i], nums[j]);
+	}
+	quickSortHoare(nums, start, j);
+	quickSortHoare(nums, j + 1, end);
 }
