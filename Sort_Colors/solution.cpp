@@ -6,7 +6,7 @@ void Solution::sortColors(vector<int>& nums) {
 	quickSortApart(nums,0,nums.size()-1);
 }
 
-// 快速排序，率辉版数据结构
+// 快速排序，率辉《数据结构》版本
 void Solution::quickSortTraditional(vector<int>&nums,int start,int end) {
 	if (start >= end) {
 		return;
@@ -21,7 +21,7 @@ void Solution::quickSortTraditional(vector<int>&nums,int start,int end) {
 			j--;
 		}
 		if (i < j) {
-			// 将比枢轴大元素值与枢轴左侧的空位，此时nums[j]可被视作空位
+			// 将比枢轴大元素置于枢轴左侧的空位，此时nums[j]可被视作空位
 			nums[i] = nums[j];
 			// i向右移动
 			i++;
@@ -41,24 +41,29 @@ void Solution::quickSortTraditional(vector<int>&nums,int start,int end) {
 }
 
 // 快速排序，划分与递归分离版本
-void Solution::quickSortApart(std::vector<int>& nums, int start, int end) {
+void Solution::quickSortApart(vector<int>& nums, int start, int end) {
 	if (start < end) {
-		int pivot = partition(nums, start, end);
-		quickSortApart(nums, start, pivot - 1);
-		quickSortApart(nums, pivot + 1, end);
+		int pivot_index = partition(nums, start, end);
+		quickSortApart(nums, start, pivot_index - 1);
+		quickSortApart(nums, pivot_index + 1, end);
 	}
 }
 
-int Solution::partition(std::vector<int>& nums, int srart, int end) {
+// 快慢指针
+int Solution::partition(vector<int>& nums, int srart, int end) {
 	int pivot = nums[end];
-	int i = srart - 1;
-
-	for (int j = srart; j < end; j++) {
-		if (nums[j] < pivot) {
-			i++;
-			std::swap(nums[i], nums[j]);
+	// follow跟随下面的i从左向右移动
+	int follow = srart - 1;
+	for (int index = srart; index < end; index++) {
+		if (nums[index] < pivot) {
+			follow++;
+			cout << "i: " << follow << " index: " << index << endl;
+			std::swap(nums[follow], nums[index]);
+		} else {
+			cout << "i: " << follow << " index: " << index << endl;
 		}
 	}
-	std::swap(nums[i + 1], nums[end]);
-	return i + 1;
+	// nums[end]为povit
+	std::swap(nums[follow + 1], nums[end]);
+	return follow + 1;
 }
