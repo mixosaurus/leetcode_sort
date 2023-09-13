@@ -22,6 +22,7 @@ int Solution::partitionTraditional(vector<int>& nums, int start, int end) {
 	int pivot_value = nums[start];
 	int i = start;
 	int j = end;
+	// i和j轮流向枢轴所在最终位置移动，二者相遇的位置即枢轴的最终位置
 	while (i < j) {
 		// j向左移动，直到其指向一个小于枢轴的值（仅在i<j时移动）
 		while (i < j && nums[j] >= pivot_value) {
