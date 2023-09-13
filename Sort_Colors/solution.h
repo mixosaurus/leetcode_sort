@@ -10,5 +10,6 @@ public:
 	int partitionTraditional(vector<int>& nums, int srart, int end);
 	int partitionLomuto(std::vector<int>& nums, int srart, int end);
 	void quickSortHoare(vector<int>& nums, int l, int r);
+	int partitionAdvanced(vector<int>& nums, int left, int right);
 };
 
